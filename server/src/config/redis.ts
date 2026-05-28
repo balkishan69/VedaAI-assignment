@@ -6,7 +6,13 @@ export function createRedisConnection() {
     host: env.REDIS_HOST,
     port: env.REDIS_PORT,
     password: env.REDIS_PASSWORD,
+
+    tls:
+      process.env.REDIS_TLS === "true"
+        ? {}
+        : undefined,
+
     maxRetriesPerRequest: null,
-    enableReadyCheck: false
+    enableReadyCheck: false,
   });
 }
