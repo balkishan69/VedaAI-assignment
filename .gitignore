@@ -55,3 +55,4 @@ dist
 build
 coverage
 .DS_Store
+.refact/ 
